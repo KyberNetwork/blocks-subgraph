@@ -5,7 +5,8 @@
     "codegen": "graph codegen",
     "build": "graph build",
     "prepare": "mustache config/${NETWORK:-eth}.json subgraph.template.yaml > subgraph.yaml",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ blocklytics/ethereum-blocks"
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ blocklytics/ethereum-blocks",
+    "deploy-arbitrum-testnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ viet-nv/arbitrum-rinkeby-blocks"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "0.21.1",
