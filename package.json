@@ -7,7 +7,9 @@
     "prepare": "mustache config/${NETWORK:-eth}.json subgraph.template.yaml > subgraph.yaml",
     "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ blocklytics/ethereum-blocks",
     "deploy-arbitrum-testnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ viet-nv/arbitrum-rinkeby-blocks",
-    "deploy-arbitrum": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ viet-nv/arbitrum-blocks"
+    "deploy-arbitrum": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ viet-nv/arbitrum-blocks",
+    "deploy-arbitrum": "graph create dynamic-amm/bttc-blocks --node https://api.thegraph.com/deploy/",
+    "deploy-arbitrum": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ dynamic-amm/bttc-blocks"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "0.21.1",
