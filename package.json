@@ -5,7 +5,9 @@
     "codegen": "graph codegen",
     "build": "graph build",
     "prepare": "mustache config/${NETWORK:-eth}.json subgraph.template.yaml > subgraph.yaml",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ blocklytics/ethereum-blocks"
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ blocklytics/ethereum-blocks",
+    "create-velas": "graph create kybernetwork/velas-blocks --node https://velas-graph.kyberengineering.io/admin",
+    "deploy-velas": "graph deploy --node https://velas-graph.kyberengineering.io/admin --ipfs https://velas-graph.kyberengineering.io/ipfs/ kybernetwork/velas-blocks"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "0.21.1",
