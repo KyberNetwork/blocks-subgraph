@@ -4,12 +4,9 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "prepare": "mustache config/${NETWORK:-eth}.json subgraph.template.yaml > subgraph.yaml",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ blocklytics/ethereum-blocks",
-    "create-velas": "graph create kybernetwork/velas-blocks --node https://velas-graph.kyberengineering.io/admin",
-    "deploy-velas": "graph deploy --node https://velas-graph.kyberengineering.io/admin --ipfs https://velas-graph.kyberengineering.io/ipfs/ kybernetwork/velas-blocks",
-    "create-aurora": "graph create kybernetwork/aurora-blocks --node https://aurora-graph.kyberengineering.io/admin",
-    "deploy-aurora": "graph deploy --node https://aurora-graph.kyberengineering.io/admin --ipfs https://aurora-graph.kyberengineering.io/ipfs/ kybernetwork/aurora-blocks"
+    "prepare": "mustache config/${NETWORK:-ethereum}.json subgraph.template.yaml > subgraph.yaml",
+    "create-subgraph": "graph create kybernetwork/${NETWORK:-ethereum}-blocks --node https://${NETWORK:-ethereum}-graph.kyberengineering.io/admin",
+    "deploy-subgraph": "graph deploy --node https://${NETWORK:-ethereum}-graph.kyberengineering.io/admin --ipfs https://${NETWORK:-ethereum}-graph.kyberengineering.io/ipfs/ kybernetwork/${NETWORK:-ethereum}-blocks"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "0.21.1",
